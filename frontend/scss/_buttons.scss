@@ -34,3 +34,12 @@
         opacity: 0.4;
     }
 }
+
+a, span {
+    transition: all .3s;
+    &:hover {
+        opacity: 0.4;
+    }
+}
+
+
