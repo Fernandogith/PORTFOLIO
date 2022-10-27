@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/plugins.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper Slide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- AOS Animate -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Colocar aqui junto do titulo as configurações de meta de compartilhamento -->
+    <title>Projeto Padrão Gulp</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <nav>
+                <ul>
+                    <li><a href="">Quem Sou</a></span></li>
+                    <li><a href="">Cases</a></span></li>
+                    <li><a href="">Contate-me</a></span></li>
+                </ul>
+            </nav>
+
+            <button class="menu-responsivo">
+                <img src="./img/icones/icon-menu-responsivo.svg" alt="">
+            </button>
+
+            <div class="direita">
+                <button class="btn-primary" data-aos="zoom-in" id="btn-whatsapp">
+                    <span>Chamar</span>
+                    <img src="./img/icones/icon-whatsapp-branco.png" alt="">
+                </button>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="quem-sou">
+        <div class="container-fluid">
+            <div class="esquerda" data-aos="fade-right"  data-aos-duration="500">
+                <div class="texto-media">
+                    <div class="titulo-descricao">
+                        <h1>Quem Sou<br>
+                            Fernando Souza<span>.</span></h1>
+                        <p>é realmente incrivel ter <span>você aqui</span></p>
+                    </div>
+                    <p>Nos ultimos 3 anos, atuei como desenvolvedor Web, Gerente de Projetos, Gestor de consultoria e Gestor de desenvolvimento, tendo entre 5 e 10 pessoas no meu time</p>
+                    <div class="social">
+                        <div class="icons">
+                            <a href="/"><img src="./img/icones/icon-linkedin.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-instagram.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-twitter.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-github.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-email.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-whatsapp.svg" alt=""></a>
+                            <a href="/"><img src="./img/icones/icon-figma.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagem-efeito">
+                    <img src="./img/img-quadriculados.svg" alt="">
+                </div>
+            </div>
+            <div class="direita" data-aos="fade-left" data-aos-duration="500">
+                <img src="./img/img-perfil.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="cases">
+        <div class="container">
+            <h2>Cases</h2>
+            <div class="slide">
+                <!-- Swiper -->
+                <div class="swiper mySwiper" data-aos="fade-left" data-aos-duration="1500">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide" >
+                            <h3>Redesign e Desenvolvimento Pagina Inicial Banco Neon</h3>
+                            <a href="https://byte-neon.netlify.app/" target="_blank"><img src="./img/img-case-banco-neon.png" alt=""></a>
+                            <h5>< HTML, CSS /></h5>
+                        </div>
+                        <div class="swiper-slide" >
+                            <h3>Design e Desenvolvimento Byte Software ERP</h3>
+                            <a href="https://byte-new.netlify.app/" target="_blank"><img src="./img/img-case-byte.png" alt=""></a>
+                            <h5>< HTML, CSS, SASS/SCSS, Java Scrips, Vue.js, Node.js e SQL /></h5>
+                        </div>
+                        <div class="swiper-slide" >
+                            <h3>Redesign e Desenvolvimento Wireframe</h3>
+                            <a href="https://byte-wireframe.netlify.app/"><img src="./img/img-wireframe.png" alt="" target="_blank"></a>
+                            <h5>< HTML, CSS /></h5>
+                        </div>
+                        <div class="swiper-slide" >
+                            <h3>Redesign e Desenvolvimento Pagina Inicial KingHost</h3>
+                            <a href="https://byte-hostinger.netlify.app/"><img src="./img/img-kinghost.png" alt="" target="_blank"></a>
+                            <h5>< HTML, CSS /></h5>
+                        </div>
+                        <div class="swiper-slide" >
+                            <h3>Design e Desenvolvimento deste portfolio</h3>
+                            <a href="/"><img src="./img/img-portfolio.png" alt="" target="_blank"></a>
+                            <h5>< HTML, CSS, SASS/SCSS /></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>© Copyright 2022. Developed by Fernando Souza</h2>
+    </footer>
+    
+
+    <!-- scritps -->
+    <script src="js/plugins.js"></script>
+    <script src="js/all.js"></script>
+
+    <!-- Swiper Slide -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+            
+            clickable: true,
+            },
+            breakpoints: {
+                1900: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 20,
+                },
+                900: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 10,
+                },
+                300: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+    
+    <!-- AOS Animate -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+        
+      </script>
+
+</body>
+</html>

@@ -1,29 +1,31 @@
 {
-  "name": "byte-new",
-  "version": "0.1.0",
-  "private": true,
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fernandogith/PROJETO-GULP.git"
+  },
+  "author": "Fernando Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fernandogith/PROJETO-GULP/issues"
+  },
+  "homepage": "https://github.com/Fernandogith/PROJETO-GULP#readme",
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.0.2",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.55.0"
+  }
 }
