@@ -9,22 +9,125 @@ header {
         display: flex;
         padding: 6rem 9rem;
         justify-content: space-between;
+
+        // Btn Abrir Menu Mobile
+        .btn-menu-responsivo {
+            display: none;
+            img {
+                min-width: 2.3rem
+            }
+        }
+
+        // Menu Desktop
+        nav.menu-desktop {
+
+            ul {
+                display: flex;
+    
+                li {
+                    
+                    padding: 1.9rem 1.1rem;
+                    transition: all .3s;
+                    &:hover {
+                        opacity: 0.4;
+                    }
+                    &:not(:first-child) {
+                        margin-left: 2rem;
+                    }
+    
+                    a {
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                        color: $black;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
+                }
+            }
+        }
+    
+        // Botão chamar no whatsapp
+        .direita {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+    
+            .btn-primary { 
+                animation: load 5s infinite alternate-reverse;
+                animation-delay: 2s;   
+            }
+    
+            @keyframes load {
+                0% {
+                    transform: scale(1);
+                    
+                }
+                50% {
+                    transform: scale(1); 
+                }
+                75% {
+                    transform: scale(1); 
+                }
+                98% {
+                    transform: scale(1.2); 
+                }
+                99% {
+                    transform: scale(1.2); 
+                }
+                100% {
+                    transform: scale(1.2); 
+                }
+            }
+                
+            
+        }
     }
     
-    nav {
-
-        ul {
+    // Menu Responsivo
+    nav.menu-responsivo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        display: none;
+        align-items: center;
+        .logo {
             display: flex;
-
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem;
+            a {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 2.2rem;
+                color: #000000;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            span {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 2.5rem;
+                color: $brand-blue;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+        ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
             li {
-                
+                    
                 padding: 1.9rem 1.1rem;
                 transition: all .3s;
                 &:hover {
                     opacity: 0.4;
-                }
-                &:not(:first-child) {
-                    margin-left: 2rem;
                 }
 
                 a {
@@ -37,73 +140,113 @@ header {
                 }
             }
         }
+        .line {
+            margin-top: 2rem;
+            width: 80%;
+            height: 1px;
+            background-color: #00000027;
+        }
     }
 
-    .menu-responsivo {
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.466);
         display: none;
-        img {
-            min-width: 2.3rem
-        }
     }
 
-    .direita {
-        display: flex;
-        align-items: center;
-        gap: 5rem;
-        .btn-primary { 
-            animation: load 5s infinite alternate-reverse;
-            animation-delay: 2s;
-            
-        }
-        @keyframes load {
-            0% {
-                transform: scale(1);
-                
-            }
-            50% {
-                transform: scale(1); 
-            }
-            75% {
-                transform: scale(1); 
-            }
-            98% {
-                transform: scale(1.2); 
-            }
-            99% {
-                transform: scale(1.2); 
-            }
-            100% {
-                transform: scale(1.2); 
-            }
-        }
-            
-        
-    }
-
-
+    
     // RESPONSIVIDADE
     @media(max-width: 1150px) {
         .container-fluid {
             padding: 2rem 2rem;
-        }
-       nav {
-        display: none;
-       }
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
 
-       .menu-responsivo {
-        display: flex;
+            .btn-menu-responsivo {
+                display: flex;
+            }
+
+            nav.menu-desktop {
+                display: none;
+            }
         }
+
+        nav.menu-responsivo.active {
+            display: flex;
+            .logo {
+                width: 100%;
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+            .icons {
+                padding: 1.5rem;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                a {
+                    padding: 0.5rem;
+                    img {
+                        width: 24px;
+                    }
+                    
+                }
+            }
+        }
+
+        .overlay.active {
+            width: 60%;
+            display: flex;
+        }
+
     }
 
     @media(max-width: 600px) {
         .container-fluid {
             padding: 2rem 2rem;
         }
+
         .direita {
             .btn-primary { 
                 padding: 1.3rem 1.7rem;
             }
         }
+
+        // Menu Responsivo
+        nav.menu-responsivo.active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70%;
+            .logo {
+                padding: 1rem;
+                width: 100%;
+                a {
+                    font-size: 1.5rem; 
+                }
+                span {
+                    font-size: 2.2rem;
+                }
+            }
+            ul {
+                li {
+                    a {
+                        font-size: 1.2rem; 
+                    }
+                }
+            }
+        }
+
+        .overlay.active {
+            width: 30%;
+            
+        }
+
     }
 
 }

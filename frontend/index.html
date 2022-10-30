@@ -41,7 +41,14 @@
 <body>
     <header>
         <div class="container-fluid">
-            <nav>
+            
+            <!-- Botão menu responsivo -->
+            <button class="btn-menu-responsivo" onclick="abrirMenu()">
+                <img src="./img/icones/icon-menu-responsivo.svg" alt="">
+            </button>
+
+            <!-- Navegação Desktop -->
+            <nav class="menu-desktop">
                 <ul>
                     <li><a href="">Quem Sou</a></span></li>
                     <li><a href="/#cases">Cases</a></span></li>
@@ -49,16 +56,40 @@
                 </ul>
             </nav>
 
-            <button class="menu-responsivo">
-                <img src="./img/icones/icon-menu-responsivo.svg" alt="">
-            </button>
-
+            <!-- Botão chamar no whatsapp -->
             <div class="direita">                
                 <a href="https://wa.me/5551998040218" target="_blank" class="btn-primary btn-whatsapp" data-aos="zoom-in">
                     <span>Chamar</span>
                     <img src="./img/icones/icon-whatsapp-branco.png" alt="">
                 </a>
             </div>
+        </div>
+
+        <!-- Menu Responsivo -->
+        <nav class="menu-responsivo" id="menu-responsivo">
+            <div class="logo">
+                <a href=""> < Fernando Souza<span>.</span> /></a>
+            </div>
+
+            <ul>
+                <li><a href="/" onclick="fecharMenu()">Quem Sou</a></span></li>
+                <li><a href="/#cases" onclick="fecharMenu()">Cases</a></span></li>
+                <li><a href="https://wa.me/5551998040218" onclick="fecharMenu()">Contate-me</span></a></li>
+            </ul>
+            <div class="line"></div>
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/infernandosouza" target="_blank" onclick="fecharMenu()"><img src="./img/icones/icon-linkedin.svg" alt=""></a>
+                <a href="https://www.instagram.com/infernandosouza" target="_blank" onclick="fecharMenu()"><img src="./img/icones/icon-instagram.svg" alt=""></a>
+                <a href="https://twitter.com/twfernandosouza" target="_blank" onclick="fecharMenu()"><img src="./img/icones/icon-twitter.svg" alt=""></a>
+                <a href="mailto:fernandosouza.inbox@gmail.com" target="_blank" onclick="fecharMenu()"><img src="./img/icones/icon-email.svg" alt=""></a>
+                <a href="https://wa.me/5551998040218" target="_blank" onclick="fecharMenu()"><img src="./img/icones/icon-whatsapp.svg" alt=""></a>
+            </div>
+        </div>
+        </nav>
+
+        <!-- Overley Responsivo -->
+        <div class="overlay" id="overlay" onclick="fecharMenu()">
+
         </div>
 
     </header>
@@ -195,7 +226,26 @@
     <!-- Initialize AOS -->
     <script>
         AOS.init();
+
+        function abrirMenu() {
+            const openMenu = document.getElementById("menu-responsivo");
+                openMenu.classList.add("active");
+
+            const openOverlay = document.getElementById("overlay");
+                openOverlay.classList.add("active");
         
+        }
+
+        function fecharMenu() {
+            const openMenu = document.getElementById("menu-responsivo");
+                openMenu.classList.remove("active");
+
+            const openOverlay = document.getElementById("overlay");
+                openOverlay.classList.remove("active");
+        
+        }
+        
+
       </script>
 
 </body>
